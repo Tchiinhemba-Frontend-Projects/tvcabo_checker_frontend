@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  src: url(../font/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url(../font/Roboto-VariableFont_wdth_wght.ttf);
+}
+
+@layer base {
+    :root {
+      --background: hsl(0 0% 3.9%);
+    }
+  
+    
+  
+    body {
+      @apply bg-black text-white;
+     
+      font-family: "Roboto";
+    }
+    
+  }

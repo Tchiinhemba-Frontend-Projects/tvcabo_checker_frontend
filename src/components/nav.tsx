@@ -1,27 +1,44 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Logo from "../assets/logo.svg"
+import { Link } from './link'
 function Nav() {
+
+    const ItemLink= [
+        {
+            to:"/residential",
+            title:"Residencial"
+        },
+        {
+            to:"/viagem",
+            title:"Viagem"
+        },
+        {
+            to:"/pessoal",
+            title:"Pessoal"
+           
+        },
+        {
+            to:"/comervial",
+            title:"Comercial"
+        }
+    ]
   return (
     <React.Fragment>
         <div className='py-7 px-10 flex justify-between items-center'>
             <div className='flex items-center gap-5'>
             <div>
-                <h2>Logo</h2>
-            </div>
-            <div className='flex space-x-4'>
-                <NavLink to="/residential" className={({isActive}) => (`${isActive && "underline" }`)}>
-                    <h3>Residencial</h3>
-                </NavLink>
-                <NavLink to="">
-                    <h3>Residencial</h3>
+                <NavLink to="/">
+                    <img src={Logo} alt='logo' className='w-24'/>
                 </NavLink>
             </div>
+            <div className='flex space-x-6'>
+                {ItemLink.map((item, index) => ( index < 2 && <Link key={index} {...item}/>) )}
             </div>
-            <div >
-
-            <NavLink to="">
-                    <h3>Residencial</h3>
-                </NavLink>
+            </div>
+            <div className='flex space-x-6'>
+            
+            {ItemLink.map((item, index) => ( index >= 2 && <Link key={index} {...item}/>) )}
 
             </div>
         </div>

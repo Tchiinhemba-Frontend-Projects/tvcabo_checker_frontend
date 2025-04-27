@@ -4,7 +4,7 @@ import { Header } from './header'
 function Layout() {
   return (
     <React.Fragment>
-        <div>
+        <div >
         <Header/>
          <Outlet/>
         </div>
